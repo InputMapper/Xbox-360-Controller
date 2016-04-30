@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A6A6385F-9E2A-4CFE-93B2-5F2CD0EE7A1D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>_360_Controller_Input</RootNamespace>
+    <AssemblyName>360 Controller Input</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\AppData\Roaming\InputMapper2\plugins\360 Controller Input\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\AppData\Roaming\InputMapper2\plugins\360 Controller Input\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ODIF, Version=1.0.5914.23828, Culture=neutral, PublicKeyToken=19233d9f410e16f7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\PluginInterface\bin\Release\ODIF.dll</HintPath>
+    </Reference>
+    <Reference Include="SlimDX, Version=4.0.13.43, Culture=neutral, PublicKeyToken=b1b0c32fd1ffe4f9, processorArchitecture=x86">
+      <HintPath>..\packages\SlimDX.4.0.13.44\lib\NET40\SlimDX.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Xbox360Controller.cs" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\360_A.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\360_B.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\360_Back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\360_Back_Alt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\360_Back_Alt2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\360_Dpad.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\360_Dpad_Down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\360_Dpad_Left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\360_Dpad_Right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\360_Dpad_Up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\360_Guide.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\360_LB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\360_Left_Stick.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\360_LT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\360_RB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\360_Right_Stick.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\360_RT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\360_Start.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\360_Start_Alt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\360_Start_Alt2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\360_X.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\360_Y.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\controller.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>C:\Users\jhebb\OneDrive\InputMapper2\PluginBuilder\bin\Release\PluginBuilder.exe "$(TargetPath)</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
