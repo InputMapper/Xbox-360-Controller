@@ -30,7 +30,7 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\..\..\AppData\Roaming\InputMapper2\plugins\360 Controller Input\</OutputPath>
+    <OutputPath>..\..\..\..\AppData\Roaming\InputMapper2\plugins\360 Controller Input\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>

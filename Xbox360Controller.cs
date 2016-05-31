@@ -79,34 +79,34 @@ namespace _360_Controller_Input
             if (controller.GetCapabilities(DeviceQueryType.Any).Subtype.HasFlag(DeviceSubtype.Gamepad))
                 this.StatusIcon = Properties.Resources.controller.ToImageSource();
 
-            InputChannels.Add(device.LSx);
-            InputChannels.Add(device.LSy);
-            InputChannels.Add(device.RSx);
-            InputChannels.Add(device.RSy);
+            Channels.Add(device.LSx);
+            Channels.Add(device.LSy);
+            Channels.Add(device.RSx);
+            Channels.Add(device.RSy);
 
-            InputChannels.Add(device.LS);
-            InputChannels.Add(device.RS);
+            Channels.Add(device.LS);
+            Channels.Add(device.RS);
 
-            InputChannels.Add(device.LT);
-            InputChannels.Add(device.RT);
-            InputChannels.Add(device.LB);
-            InputChannels.Add(device.RB);
+            Channels.Add(device.LT);
+            Channels.Add(device.RT);
+            Channels.Add(device.LB);
+            Channels.Add(device.RB);
 
-            InputChannels.Add(device.DUp);
-            InputChannels.Add(device.DDown);
-            InputChannels.Add(device.DLeft);
-            InputChannels.Add(device.DRight);
+            Channels.Add(device.DUp);
+            Channels.Add(device.DDown);
+            Channels.Add(device.DLeft);
+            Channels.Add(device.DRight);
 
-            InputChannels.Add(device.A);
-            InputChannels.Add(device.B);
-            InputChannels.Add(device.X);
-            InputChannels.Add(device.Y);
+            Channels.Add(device.A);
+            Channels.Add(device.B);
+            Channels.Add(device.X);
+            Channels.Add(device.Y);
 
-            InputChannels.Add(device.Start);
-            InputChannels.Add(device.Back);
+            Channels.Add(device.Start);
+            Channels.Add(device.Back);
 
-            OutputChannels.Add(device.SmallRumble);
-            OutputChannels.Add(device.BigRumble);
+            Channels.Add(device.SmallRumble);
+            Channels.Add(device.BigRumble);
 
             ListenerThread = new Thread(inputListener);
             ListenerThread.Start();
@@ -168,67 +168,67 @@ namespace _360_Controller_Input
 
     internal class x360device
     {
-        public InputChannelTypes.JoyAxis LSx { get; set; }
-        public InputChannelTypes.JoyAxis LSy { get; set; }
-        public InputChannelTypes.JoyAxis RSx { get; set; }
-        public InputChannelTypes.JoyAxis RSy { get; set; }
+        public JoyAxis LSx { get; set; }
+        public JoyAxis LSy { get; set; }
+        public JoyAxis RSx { get; set; }
+        public JoyAxis RSy { get; set; }
 
-        public InputChannelTypes.Button LS { get; set; }
-        public InputChannelTypes.Button RS { get; set; }
+        public Button LS { get; set; }
+        public Button RS { get; set; }
 
-        public InputChannelTypes.JoyAxis LT { get; set; }
-        public InputChannelTypes.JoyAxis RT { get; set; }
-        public InputChannelTypes.Button LB { get; set; }
-        public InputChannelTypes.Button RB { get; set; }
+        public JoyAxis LT { get; set; }
+        public JoyAxis RT { get; set; }
+        public Button LB { get; set; }
+        public Button RB { get; set; }
 
-        public InputChannelTypes.Button DUp { get; set; }
-        public InputChannelTypes.Button DDown { get; set; }
-        public InputChannelTypes.Button DLeft { get; set; }
-        public InputChannelTypes.Button DRight { get; set; }
+        public Button DUp { get; set; }
+        public Button DDown { get; set; }
+        public Button DLeft { get; set; }
+        public Button DRight { get; set; }
 
-        public InputChannelTypes.Button A { get; set; }
-        public InputChannelTypes.Button B { get; set; }
-        public InputChannelTypes.Button X { get; set; }
-        public InputChannelTypes.Button Y { get; set; }
+        public Button A { get; set; }
+        public Button B { get; set; }
+        public Button X { get; set; }
+        public Button Y { get; set; }
 
-        public InputChannelTypes.Button Start { get; set; }
-        public InputChannelTypes.Button Back { get; set; }
-        public InputChannelTypes.Button Guide { get; set; }
+        public Button Start { get; set; }
+        public Button Back { get; set; }
+        public Button Guide { get; set; }
 
-        public OutputChannelTypes.RumbleMotor BigRumble { get; set; }
-        public OutputChannelTypes.RumbleMotor SmallRumble { get; set; }
+        public RumbleMotor BigRumble { get; set; }
+        public RumbleMotor SmallRumble { get; set; }
 
         public x360device()
         {
-            LSx = new InputChannelTypes.JoyAxis("Left Stick X", "", Properties.Resources._360_Left_Stick.ToImageSource());
-            LSy = new InputChannelTypes.JoyAxis("Left Stick Y", "", Properties.Resources._360_Left_Stick.ToImageSource());
-            RSx = new InputChannelTypes.JoyAxis("Right Stick X", "", Properties.Resources._360_Right_Stick.ToImageSource());
-            RSy = new InputChannelTypes.JoyAxis("Right Stick Y", "", Properties.Resources._360_Right_Stick.ToImageSource());
+            LSx = new JoyAxis("Left Stick X", DataFlowDirection.Input, "", Properties.Resources._360_Left_Stick.ToImageSource());
+            LSy = new JoyAxis("Left Stick Y", DataFlowDirection.Input, "", Properties.Resources._360_Left_Stick.ToImageSource());
+            RSx = new JoyAxis("Right Stick X", DataFlowDirection.Input, "", Properties.Resources._360_Right_Stick.ToImageSource());
+            RSy = new JoyAxis("Right Stick Y", DataFlowDirection.Input, "", Properties.Resources._360_Right_Stick.ToImageSource());
 
-            LS = new InputChannelTypes.Button("Left Stick", "", Properties.Resources._360_Left_Stick.ToImageSource());
-            RS = new InputChannelTypes.Button("Right Stick", "", Properties.Resources._360_Right_Stick.ToImageSource());
+            LS = new Button("Left Stick", DataFlowDirection.Input, "", Properties.Resources._360_Left_Stick.ToImageSource());
+            RS = new Button("Right Stick", DataFlowDirection.Input, "", Properties.Resources._360_Right_Stick.ToImageSource());
 
-            LT = new InputChannelTypes.JoyAxis("Left Trigger", "", Properties.Resources._360_LT.ToImageSource()) { min_Value = 0 };
-            RT = new InputChannelTypes.JoyAxis("Right Trigger", "", Properties.Resources._360_RT.ToImageSource()) { min_Value = 0 };
-            LB = new InputChannelTypes.Button("Left Bumper", "", Properties.Resources._360_LB.ToImageSource());
-            RB = new InputChannelTypes.Button("Right Bumper", "", Properties.Resources._360_RB.ToImageSource());
+            LT = new JoyAxis("Left Trigger", DataFlowDirection.Input, "", Properties.Resources._360_LT.ToImageSource()) { min_Value = 0 };
+            RT = new JoyAxis("Right Trigger", DataFlowDirection.Input, "", Properties.Resources._360_RT.ToImageSource()) { min_Value = 0 };
+            LB = new Button("Left Bumper", DataFlowDirection.Input, "", Properties.Resources._360_LB.ToImageSource());
+            RB = new Button("Right Bumper", DataFlowDirection.Input, "", Properties.Resources._360_RB.ToImageSource());
 
-            DUp = new InputChannelTypes.Button("DPad Up", "", Properties.Resources._360_Dpad_Up.ToImageSource());
-            DDown = new InputChannelTypes.Button("DPad Down", "", Properties.Resources._360_Dpad_Down.ToImageSource());
-            DLeft = new InputChannelTypes.Button("DPad Left", "", Properties.Resources._360_Dpad_Left.ToImageSource());
-            DRight = new InputChannelTypes.Button("DPad Right", "", Properties.Resources._360_Dpad_Right.ToImageSource());
+            DUp = new Button("DPad Up", DataFlowDirection.Input, "", Properties.Resources._360_Dpad_Up.ToImageSource());
+            DDown = new Button("DPad Down", DataFlowDirection.Input, "", Properties.Resources._360_Dpad_Down.ToImageSource());
+            DLeft = new Button("DPad Left", DataFlowDirection.Input, "", Properties.Resources._360_Dpad_Left.ToImageSource());
+            DRight = new Button("DPad Right", DataFlowDirection.Input, "", Properties.Resources._360_Dpad_Right.ToImageSource());
 
-            A = new InputChannelTypes.Button("A", "", Properties.Resources._360_A.ToImageSource());
-            B = new InputChannelTypes.Button("B", "", Properties.Resources._360_B.ToImageSource());
-            X = new InputChannelTypes.Button("X", "", Properties.Resources._360_X.ToImageSource());
-            Y = new InputChannelTypes.Button("Y", "", Properties.Resources._360_Y.ToImageSource());
+            A = new Button("A", DataFlowDirection.Input, "", Properties.Resources._360_A.ToImageSource());
+            B = new Button("B", DataFlowDirection.Input, "", Properties.Resources._360_B.ToImageSource());
+            X = new Button("X", DataFlowDirection.Input, "", Properties.Resources._360_X.ToImageSource());
+            Y = new Button("Y", DataFlowDirection.Input, "", Properties.Resources._360_Y.ToImageSource());
 
-            Start = new InputChannelTypes.Button("Start", "", Properties.Resources._360_Start.ToImageSource());
-            Back = new InputChannelTypes.Button("Back", "", Properties.Resources._360_Back.ToImageSource());
-            Guide = new InputChannelTypes.Button("Guide", "", Properties.Resources._360_Guide.ToImageSource());
+            Start = new Button("Start", DataFlowDirection.Input, "", Properties.Resources._360_Start.ToImageSource());
+            Back = new Button("Back", DataFlowDirection.Input, "", Properties.Resources._360_Back.ToImageSource());
+            Guide = new Button("Guide", DataFlowDirection.Input, "", Properties.Resources._360_Guide.ToImageSource());
 
-            BigRumble = new OutputChannelTypes.RumbleMotor("Big Rumble", "");
-            SmallRumble = new OutputChannelTypes.RumbleMotor("Small Rumble", "");
+            BigRumble = new RumbleMotor("Big Rumble", DataFlowDirection.Output, "");
+            SmallRumble = new RumbleMotor("Small Rumble", DataFlowDirection.Output, "");
         }
     }
 }
